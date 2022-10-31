@@ -1,0 +1,6 @@
+p, ADMIN, /api/v1/users*, *
+p, M1_Readers, M1, read
+g, U1, M1_Readers
+p, B1_Readers, B1, read
+g, U1, B1_Readers
+p, A1_Readers, A1, read
