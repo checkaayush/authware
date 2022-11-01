@@ -1,11 +1,14 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/checkaayush/authware/handler"
 	"github.com/checkaayush/authware/rbac"
 	"github.com/checkaayush/authware/repository/inmem"
 
 	casbin "github.com/casbin/casbin/v2"
+	casbin_mw "github.com/labstack/echo-contrib/casbin"
 	echo "github.com/labstack/echo/v4"
 	echo_mw "github.com/labstack/echo/v4/middleware"
 )
@@ -23,13 +26,29 @@ func main() {
 	}
 
 	// Add Authorization middleware
-	e.Use(rbac.Middleware(enforcer))
+	e.Use(casbin_mw.MiddlewareWithConfig(casbin_mw.Config{
+		Enforcer: enforcer,
+		UserGetter: func(c echo.Context) (string, error) {
+			username, _, _ := c.Request().BasicAuth()
+			return username, nil
+			// isAdmin, _ := rm.HasLink(username, adminRoleName)
+			// if isAdmin {
+			// 	return adminRoleName, nil
+			// }
+			// return webuserRoleName, nil
+		},
+		ErrorHandler: func(c echo.Context, internal error, proposedStatus int) error {
+			err := echo.NewHTTPError(proposedStatus, fmt.Errorf("unauthorized").Error())
+			err.Internal = internal
+			return err
+		},
+	}))
 
 	// Initialize storage
 	repo := inmem.NewInMemRepository()
 
 	// Initialize RBAC
-	auth, err := rbac.New("auth_model.conf", "auth_policy.csv")
+	auth, err := rbac.New(enforcer)
 	if err != nil {
 		e.Logger.Fatalf("failed to initialize rbac: %s", err)
 	}
