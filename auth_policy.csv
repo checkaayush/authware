@@ -1,4 +1,11 @@
+# HTTP Endpoints
 p, ADMIN, /api/v1/users*, *
+p, WEBUSER, /api/v1/apps*, *
+p, WEBUSER, /api/v1/metrics*, *
+p, WEBUSER, /api/v1/blocks*, *
+g, ADMIN, WEBUSER
+
+# User Roles
 p, M1_Readers, M1, read
 g, U1, M1_Readers
 p, B1_Readers, B1, read

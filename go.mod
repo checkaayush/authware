@@ -6,6 +6,7 @@ replace github.com/checkaayush/okta-role-manager => /Users/aayush.sarva/Developm
 
 require (
 	github.com/casbin/casbin/v2 v2.56.0
+	github.com/labstack/echo-contrib v0.13.0
 	github.com/labstack/echo/v4 v4.9.1
 )
 
