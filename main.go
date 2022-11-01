@@ -74,6 +74,7 @@ func main() {
 
 	v1.POST("/blocks", h.CreateBlock)
 	v1.GET("/blocks", h.ListBlocks)
+	v1.GET("/blocks/:id", h.GetBlockByID)
 	v1.DELETE("/blocks/:id", h.DeleteBlock)
 
 	// Start server

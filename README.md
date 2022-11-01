@@ -9,7 +9,7 @@ Authentication and access control for HTTP API integrated with an Identity Provi
   
   <h1>Authware</h1>
   
-  <!-- <img src="https://github.com/checkaayush/authware/workflows/build/badge.svg?branch=master"/> -->
+  <!-- <img src="https://github.com/checkaayush/authware/workflows/workflow/badge.svg?branch=master"/> -->
 
   <!-- <a href="https://goreportcard.com/report/github.com/checkaayush/authware">
     <img src="https://goreportcard.com/badge/github.com/checkaayush/authware"/>
@@ -51,4 +51,9 @@ make start
 ## TODO
 
 - Add unit tests for the core functionality.
+- Proper integration with Okta Role Manager: https://github.com/casbin/casbin/blob/master/rbac/role_manager.go
 - Save policy updates back to Okta using the Role manager.
+- Use separate policies for HTTP and resources: https://github.com/casbin/casbin/blob/master/examples/rbac_with_multiple_policy_model.conf
+- Support for multiple tenants using Casbin Domains: 
+  - https://github.com/casbin/casbin/blob/master/examples/rbac_with_domains_model.conf
+  - https://github.com/casbin/casbin/blob/master/examples/rbac_with_domains_policy.csv

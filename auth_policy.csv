@@ -5,9 +5,16 @@ p, WEBUSER, /api/v1/metrics*, *
 p, WEBUSER, /api/v1/blocks*, *
 g, ADMIN, WEBUSER
 
-# User Roles
+# User Roles and Permissions
 p, M1_Readers, M1, read
-g, U1, M1_Readers
+g, WEBUSER, M1_Readers
 p, B1_Readers, B1, read
-g, U1, B1_Readers
+g, WEBUSER, B1_Readers
 p, A1_Readers, A1, read
+
+# For Demo:
+p, M1_Readers, 1, read
+g, WEBUSER, M1_Readers
+p, B1_Readers, 1, read
+g, WEBUSER, B1_Readers
+p, A1_Readers, 1, read

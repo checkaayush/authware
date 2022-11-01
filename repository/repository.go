@@ -34,6 +34,7 @@ type AppRepository interface {
 
 type BlockRepository interface {
 	ListBlocks(ctx context.Context) ([]model.Block, error)
+	GetBlockByID(ctx context.Context, id int) (*model.Block, error)
 	CreateBlock(ctx context.Context, u *model.Block) (*model.Block, error)
 	DeleteBlock(ctx context.Context, id int) error
 }
