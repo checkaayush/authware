@@ -1,7 +1,3 @@
-# authware
-
-Authentication and access control for HTTP API integrated with an Identity Provider (Okta)
-
 <div align="center">
   <p>
     <img src="https://user-images.githubusercontent.com/4137581/199227135-962f0780-33d3-4812-82cd-b24bc0ae8866.png" height="130px"/>
@@ -18,7 +14,7 @@ Authentication and access control for HTTP API integrated with an Identity Provi
 
 ## Introduction
 
-Authware is an authentication and authorization service based on Role-Based Access Control using [Casbin](https://casbin.io/).
+Authware is a centralized authentication and authorization service based on Role-Based Access Control using [Casbin](https://casbin.io/). It has an integration with Identity Provider Okta and is extensible to support other Identity Providers.
 
 Here's the [Postman Collection](https://www.getpostman.com/collections/44021ac052894812ee69) for supported endpoints.
 
