@@ -20,6 +20,8 @@ Authentication and access control for HTTP API integrated with an Identity Provi
 
 Authware is an authentication and authorization service based on Role-Based Access Control using [Casbin](https://casbin.io/).
 
+Here's the [Postman Collection](https://www.getpostman.com/collections/44021ac052894812ee69) for supported endpoints.
+
 ### Error Codes
 
 | Code Range | Description                                                                                                                             |
@@ -46,7 +48,7 @@ make start
 * [echo](https://echo.labstack.com/) - Web framework
 * [casbin](https://casbin.io/) - Authorization library
 
-## TODO:
+## TODO
 
 - Add unit tests for the core functionality.
-- 
+- Save policy updates back to Okta using the Role manager.

@@ -2,8 +2,6 @@ module github.com/checkaayush/authware
 
 go 1.17
 
-replace github.com/checkaayush/okta-role-manager => /Users/aayush.sarva/Development/personal/okta-role-manager
-
 require (
 	github.com/casbin/casbin/v2 v2.56.0
 	github.com/labstack/echo-contrib v0.13.0
